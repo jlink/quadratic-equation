@@ -27,10 +27,10 @@ public class Main {
 	}
 
 	private static double calculateSolution1(double a, double b, double c) {
-		return (-b + Math.sqrt(b * b - 4 * a * c)) / 4 * a * c;
+		return (-b + Math.sqrt(b * b - 4 * a * c)) / 2 * a;
 	}
 
 	private static double calculateSolution2(double a, double b, double c) {
-		return (-b - Math.sqrt(b * b - 4 * a * c)) / 4 * a * c;
+		return (-b - Math.sqrt(b * b - 4 * a * c)) / 2 * a;
 	}
 }
