@@ -1,7 +1,6 @@
 buildscript {
 	repositories {
 		mavenCentral()
-		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	}
 	dependencies {
 		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M4'
@@ -10,13 +9,10 @@ buildscript {
 
 repositories {
 	mavenCentral()
-	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-	maven { url "https://jitpack.io" }
 }
 
 ext.junitPlatformVersion = '1.0.0-M4'
 ext.junitJupiterVersion = '5.0.0-M4'
-ext.jqwikVersion = '0.2.4'
 
 apply plugin: 'java'
 apply plugin: 'org.junit.platform.gradle.plugin'
@@ -26,7 +22,7 @@ jar {
 	version = ''
 	manifest {
     attributes(
-      'Main-Class': 'quadratic.Main'
+      'Main-Class': 'quadratic4.Main'
     )
   }
 }
@@ -38,21 +34,19 @@ compileTestJava {
 }
 
 junitPlatform {
-	// platformVersion '1.0.0-M4'
-	filters {
-		// includeClassNamePattern '.*Test'
-	}
 	enableStandardTestTask true
+
+	filters {
+		packages {
+			include 'quadratic4'
+		}
+	}
 }
 
 dependencies {
-
-	// JUnit Jupiter API and TestEngine implementation
 	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
 	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-
-	// jqwik zum Property Testen
-	testCompile "com.github.jlink:jqwik:${jqwikVersion}"
+	testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
 }
 
 task wrapper(type: Wrapper) {
