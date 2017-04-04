@@ -5,3 +5,4 @@
   - a = 0, z.B. 0, 1, 3: Erwartet: -3, tatsächlich: 0.0 und -0.0
   - Diskriminante = 0, z.B. 1, 2, 1: Nur 1 Lösung erwartet, aber zwei geliefert
   - Diskriminante < 0, z.B. 1, 1, 1: Keine Lösung erwartet, Ergebnis NaN and NaN
+- Rundungsfehler bei double: Welche Genauigkeit ist notwendig?

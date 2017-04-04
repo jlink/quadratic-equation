@@ -6,7 +6,7 @@ public class Main {
 	public static void main(String... args) throws IOException {
 		System.out.println();
 		System.out.println("Solving quadratic equations for");
-		System.out.println("a x^2 + b x + c = 0");
+		System.out.println("a x\u00b2 + b x + c = 0");
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
