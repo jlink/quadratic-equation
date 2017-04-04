@@ -37,7 +37,12 @@ public class Main {
 
 	private static void printSolutions(double[] solutions) {
 		System.out.println();
-		System.out.println("Solutions: " + solutions[0] + " and " + solutions[1]);
+		if (solutions.length == 0)
+			System.out.println("No solution");
+		else if (solutions.length == 1)
+			System.out.println("Single solution: " + solutions[0]);
+		else
+			System.out.println("Solutions: " + solutions[0] + " and " + solutions[1]);
 	}
 
 }
